@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Eddie Browser Outfitters</title>
+	<meta name="robots" content="noindex,nofollow" />
+	<!-- below is a google font, go to https://www.google.com/fonts to get yours! -->
+	<link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/default.css" />
+	<style type="text/css">
+		.masthead {
+			font-family: 'Damion', cursive;
+			/* required for google font */
+			font-size: 3em;
+		}
+
+		#logo {
+			float: right;
+			display: inline-block;
+			padding: 2px;
+			max-width: 100px;
+			/* actual size of image */
+			width: 20%;
+			/* approximate size taken on screen in maximum view */
+		}
+
+		#wear {
+			float: left;
+			display: inline-block;
+			padding: 20px;
+			max-width: 300px;
+			/* actual size of image */
+			width: 33%;
+			/* approximate size taken on screen in maximum view */
+		}
+
+		footer {
+			text-align: center;
+			clear: both;
+			/* ride below all items */
+		}
+
+		nav {
+			text-align: center;
+			/* centers the nav */
+		}
+
+		nav ul {
+			list-style: none;
+			/* removes the bullets */
+		}
+
+		nav ul li {
+			display: inline-block;
+			/* makes horizontal, but able to declare margins */
+			margin: 0 2%;
+			/* margin left-right, gets smaller as necessary */
+		}
+
+		nav a:hover {
+			text-decoration: none;
+		}
+	</style>
+
+	<!--[if ltIE9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+</head>
+
+<body>
+	<header role="banner">
+		<img src="images/four-seasons.gif" alt="Seasonal Logo Goes Here" class="flexible" id="logo" />
+		<h1 class="masthead">Eddie Browser</h1>
+		<nav>
+			<ul>
+				<li class="seasons"><a href="Default">HOME</a></li>
+				<li class="seasons"><a href="Spring">Spring</a></li>
+				<li class="seasons"><a href="Summer">Summer</a></li>
+				<li class="seasons"><a href="Fall">Fall</a></li>
+				<li class="seasons"><a href="Winter">Winter</a></li>
+				<li class="seasons"><a href="Christmas">Christmas</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main role="main">
+		<header>
+			<h3>Outfitter for All Seasons!</h3>
+		</header>
+
+		<p id="one">
+			Clothing can reveal a character’s views on the world. If someone puts on a graphic t-shirt with the sleeves
+			cut off, it implies that they could hardly care less about offending other people. Meanwhile, a character
+			who wears a dressy button-down shirt with a single-breasted plaid jacket seems like the old-fashioned type
+		</p>
+		<img src="images/all-seasons.png" alt="Season Wear Goes Here" id="wear" />
+		<p id="two">
+			When it comes to getting the job done right, sometimes the necessary tools aren't what you pick up at the
+			hardware store; it's the clothes on your back. Feel comfortable and know you can rely on our wide range of
+			men's work clothes and men's uniforms. Shirts and t-shirts that allow you to breathe. Shorts and pants that
+			are rugged and durable. Sweatshirts, jackets, and coats for layering over a long winter. Coveralls when you
+			really need to cover-it-all. Hats and caps to keep the sun out of your eyes and the cold winter bite at bay.
+			Even thermal underwear and socks!
+		</p>
+		<p id="three">
+
+		</p>
+		<p>
+			Text provided by <a href="http://hipsum.co/" target="_blank">JC</a>
+		</p>
+	</main>
+	<footer>
+		<small>&copy; 2021, All Rights Reserved ~
+			<a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
+			<a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
+		</small>
+	</footer>
+	<!-- END Footer -->
+	<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+		$("document").ready(function () {
+			$('#dateForm').submit(function (e) {//handle form submission event
+				e.preventDefault();//stop default submission
+				var datetext = $('input[name=dateField]').val();//grab data from textbox
+				var formDate = new Date(datetext);//create a date from form input
+				var today = new Date();
+
+				if (formDate > today) {
+					alert(datetext + " is in the future!");
+				} else {
+					alert(datetext + " is in the past!");
+				}
+			});
+		});
+
+		$("document").ready(function () {
+
+
+			//alert ("i'm query");
+
+
+			$('.seasons a').click(function (e) {//find all a tags inside class of seasons
+				e.preventDefault();//stop default submission
+				var season = $(this).attr("href");//contents of href attribute of this element
+				//alert(season);
+
+				season = season.toLocaleLowerCase();
+
+				switch (season) {
+
+					case 'spring':
+						$('main header h3').html("Get a Jump on spring wear for the");
+						$('#logo').attr('src', 'images/spring.gif');
+						$('#wear').attr('src', 'images/spring-wear.jpg');
+						$('html').css("background-color", "#2B7129");
+						$('main #one').html("A new season means new outfits, and we couldn’t be more excited about that. But what do you do when the weather’s cold in the morning, hot in the day… and cold again at night? The trick to putting a stylish spring outfit together is starting out with chic basics, and then updating your style for the season. Here are our top style tips on what to wear for spring:");
+						$('main #two').html("The key to having the perfect spring outfit is to start with good spring basics. If you have a solid wardrobe of essentials, you’ll be able to mix and match with ease. They’ll also provide a stylish spring outfit you can add accessories to. Here are a few pieces you should start with:");
+						$('main #three').html("wears a pair of ripped denim jeans, rolled at the ankle, paired with a white V neck tee and a blush pink coat and sneakers. These neutral, calming tones are perfect for spring mornings. Brands not specified.");
+
+						break;
+
+					case 'summer':
+						$('main header h3').html("Get a Jump on sprong wear");
+						$('#logo').attr('src', 'images/summer.gif');
+						$('#wear').attr('src', 'images/summer-wear.jpg');
+						$('html').css("background-color", "#EBA52B");
+						$('main #one').html("New season, new wardrobe. As the temperatures continue to rise, have your style follow suit and revamp your racks with fresh, elevated summer looks. You'll be relieved to know there's no shortage of summer outfit inspiration on Instagram and in the street style galleries—our gears are already grinding just thinking of all the looks to try when the season finally heats up. From bright colors to matching separates, this season's hottest trends and warm-weather-ready outfit ideas below are ready to inspire your closet.");
+						$('main #two').html("Refresh your button-up shirts by going for the plunge for a more relaxed vibe. Then, offset that with a polished pencil skirt and ladylike accessories for a fit that's balanced in all the best ways.");
+						$('main #three').html("The scorching summer sun can cause you to sweat, get dehydrated and even break out into a heat rash. However, you can prevent some of these problems by dressing smart and wearing the right clothes to beat the heat.");
+						break;
+
+					case 'fall':
+						$('main header h3').html("Get a Jump on sprong wear");
+						$('#logo').attr('src', 'images/fall.gif');
+						$('#wear').attr('src', 'images/fall-wear.jpg');
+						$('html').css("background-color", "#A81124");
+						$('main #one').html("Temperatures fluctuate greatly during the fall. Mornings will be chilly, afternoons will be hot, and evenings will be cool again. If you are at work or at school all day long, you may not have the time to change your clothes. The best way to manage this is by wearing layers, which you can take off as the day grows warmer.");
+						$('main #two').html("If you live in a place that gets cooler weather during fall, consider wearing some short-sleeved or long-sleeved shirts; these can be worn under cardigans, or over lacy tank tops. You may also wear turtlenecks and button-up shirts and blouses. If you live in a place that gets warmer weather, you can wear tank tops and short-sleeved shirts.");
+						$('main #three').html("The mornings and evenings during fall are usually cold, while the afternoons are warm. Because of this, you want to wear something over your shirt that can be easily taken off.");
+						break;
+
+					case 'winter':
+						$('main header h3').html("Get a Jump on sprong wear");
+						$('#logo').attr('src', 'images/winter.gif');
+						$('#wear').attr('src', 'images/winter-wear.jpg');
+						$('html').css("background-color", "#005393");
+						$('main #one').html("The purpose of winter clothing is to protect the body from wind, rain, snow and cold temperatures. Most winter clothing is primarily designed to fulfill this function, but that doesn’t mean there isn’t still room for style and self-expression when it's freezing out. Since most of us move between the indoors and outdoors throughout the day, layering different items of winter clothing is the most practical way to dress when the temperature starts to drop.");
+						$('main #two').html("The garment we call a jacket traces its origin back to short tunics worn in the Middle Ages in Europe. This short outer garment is meant to keep the torso and arms warm. It may be quilted or lined for additional insulation, with fleece and fur linings especially popular. Winter variations on the classic suit jacket include windbreakers, hoodies, parkas, puffy jackets, biker jackets and bomber jackets. ");
+						$('main #three').html("The coat, a longer version of the jacket, offers additional warmth. Like the jacket, it usually has long sleeves (unless it’s a cape or cloak) and closes up the front. The length of coats varies from hip to floor length, and they may be both belted at the waist, like the trench coat, or hooded. The cut is usually roomy enough to accommodate wearing a jacket, sweater and other layers underneath.");
+						break;
+
+					case 'christmas':
+						$('main header h3').html("Outfitter for all seasons");
+						$('#wear').attr('src', 'images/Christmas-wear.png');
+						$('#logo').attr('src', 'images/Christmas.jpg');
+						$('html').css("background-color", "#34A65F");
+						$('main #one').html("Christmas cannot be discussed without reference to special Christmas costumes that are worn on this occasion. Christmas costumes are a must if you are getting ready for Christmas and you need to play Santa or dress up as an elf, or playing a part in a Holiday play. During Christmas, one can source every kind of costume imagined for adults and children. People dress up in home-made as well as ready-made Christmas costumes that are reminiscent of traditional Christmas celebration.");
+						$('main #two').html("People looking for a fun activity during Christmas holiday can create special costume as it will be a creative and satisfying experience. Once the Christmas costume is finished, a whole slew of Christmas activities can be initiated such as songs, plays, and games.");
+						$('main #three').html("The Christmas Costumes may include Christmas suits for men, women ans children. Santa costumes such as Santa Claus suits, velvet suit costumes, Santa's helper costumes, Miss & Mrs. Santa Claus suits costumes are extremely popular. Other Christmas costumes include snowman suits costumes, toy soldiers suits costumes, elf elves suits costumes.");
+						break;
+
+					case 'default':
+						$('main header h3').html("Outfitter for all seasons");
+						$('#wear').attr('src','images/all-seasons.png');
+						$('html').css("background-color", "#005393");
+						$('main #one').html("Clothing can reveal a character’s views on the world. If someone puts on a graphic t-shirt with the sleevescut off, it implies that they could hardly care less about offending other people. Meanwhile, a characterwho wears a dressy button-down shirt with a single-breasted plaid jacket seems like the old-fashioned type");
+						$('main #two').html("When it comes to getting the job done right, sometimes the necessary tools aren't what you pick up at thehardware store; it's the clothes on your back. Feel comfortable and know you can rely on our wide range ofmen's work clothes and men's uniforms. Shirts and t-shirts that allow you to breathe. Shorts and pants thatare rugged and durable. Sweatshirts, jackets, and coats for layering over a long winter. Coveralls when youreally need to cover-it-all. Hats and caps to keep the sun out of your eyes and the cold winter bite at bay.Even thermal underwear and socks!");
+						$('main #three').html("");
+						break;
+
+
+
+				}
+
+
+
+
+
+
+
+
+			});
+		});
+	</script>
+
+</body>
+
+</html>
