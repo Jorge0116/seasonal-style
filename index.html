@@ -87,6 +87,14 @@
 		<header>
 			<h3>Outfitter for All Seasons!</h3>
 		</header>
+		<p>
+			<form id="dateForm">
+			<label for="dateField">
+				Input Date:<input type="text" name="dateField" id="dateField" />
+			</label>
+				<input type="submit" value="submit" />
+			</form>
+		 </p>
 
 		<p id="one">
 			Clothing can reveal a character’s views on the world. If someone puts on a graphic t-shirt with the sleeves
@@ -203,6 +211,7 @@
 					case 'default':
 						$('main header h3').html("Outfitter for all seasons");
 						$('#wear').attr('src','images/all-seasons.png');
+						$('#logo').attr('src','images/four-seasons.gif');
 						$('html').css("background-color", "#005393");
 						$('main #one').html("Clothing can reveal a character’s views on the world. If someone puts on a graphic t-shirt with the sleevescut off, it implies that they could hardly care less about offending other people. Meanwhile, a characterwho wears a dressy button-down shirt with a single-breasted plaid jacket seems like the old-fashioned type");
 						$('main #two').html("When it comes to getting the job done right, sometimes the necessary tools aren't what you pick up at thehardware store; it's the clothes on your back. Feel comfortable and know you can rely on our wide range ofmen's work clothes and men's uniforms. Shirts and t-shirts that allow you to breathe. Shorts and pants thatare rugged and durable. Sweatshirts, jackets, and coats for layering over a long winter. Coveralls when youreally need to cover-it-all. Hats and caps to keep the sun out of your eyes and the cold winter bite at bay.Even thermal underwear and socks!");
